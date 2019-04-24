@@ -1,5 +1,7 @@
 FROM debian:stable-slim
 
+LABEL maintainer "petr.safarcik@thybit.com"
+
 ARG deb=java-1.8.0-amazon-corretto-jdk_8.202.08-2_amd64.deb
 ARG path=https://d2znqt9b1bc64u.cloudfront.net
 
@@ -25,5 +27,5 @@ RUN mkdir -p /usr/share/man/man1 \
  && apt-get autoremove -y \
  && apt-get autoclean \
  && rm -rf /var/lib/apt/lists/* \
- && rm *.deb \
+ && rm $deb \
  && java -version
