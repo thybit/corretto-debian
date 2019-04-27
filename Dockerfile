@@ -23,8 +23,8 @@ RUN mkdir -p /usr/share/man/man1 \
  && apt-get install java-common \
  && dpkg --install $deb \
  && apt-get install fontconfig -y \
+ && apt-get -y install gettext-base \
  && apt-get remove --purge wget -y \
- && apt-get autoremove -y \
  && apt-get autoclean \
  && rm -rf /var/lib/apt/lists/* \
  && rm $deb \
