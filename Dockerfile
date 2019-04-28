@@ -26,7 +26,7 @@ RUN mkdir -p /usr/share/man/man1 \
  && apt-get -y install gettext-base \
  # cleanup
  && apt-get remove --purge wget -y \
- && apt-get autoremove -y -f \
+ # && apt-get autoremove -y -f \
  && apt-get clean -y \
  && apt-get autoclean -y \
  && rm -rf /var/lib/apt/lists/* \
