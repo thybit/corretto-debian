@@ -24,8 +24,11 @@ RUN mkdir -p /usr/share/man/man1 \
  && dpkg --install $deb \
  && apt-get install fontconfig -y \
  && apt-get -y install gettext-base \
+ # cleanup
  && apt-get remove --purge wget -y \
- && apt-get autoclean \
+ && apt-get autoremove -y -f \
+ && apt-get clean -y \
+ && apt-get autoclean -y \
  && rm -rf /var/lib/apt/lists/* \
  && rm $deb \
  && java -version
